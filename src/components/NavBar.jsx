@@ -9,7 +9,7 @@ const Navbar = () => {
       const element = document.getElementById(id);
       if (element) {
         const y = element.getBoundingClientRect().top + window.scrollY;
-        smoothScrollTo(y, 2); // 2 segundos, ajusta a tu gusto
+        smoothScrollTo(y, 1); 
       }
       setIsOpen(false);
     };
@@ -45,10 +45,10 @@ const Navbar = () => {
                         <button className="nav-link-btn" onClick={() => handleMenuClick('about-me')}>//about me</button>
                     </li>
                     <li>
-                        <button className="nav-link-btn" onClick={() => handleMenuClick('projects')}>//work</button>
+                        <button className="nav-link-btn" onClick={() => handleMenuClick('tools')}>//expertise</button>
                     </li>
                     <li>
-                        <button className="nav-link-btn" onClick={() => handleMenuClick('tools')}>//expertise</button>
+                        <button className="nav-link-btn" onClick={() => handleMenuClick('projects')}>//work</button>
                     </li>
                     <li>
                         <button className="nav-link-btn" onClick={() => handleMenuClick('experience')}>//others</button>
