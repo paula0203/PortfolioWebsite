@@ -1,0 +1,33 @@
+:root {
+  --brand_orange: #E85002;
+  --brand_blue: #3acaff;
+  --primary: #000436;
+  --menu-gray: #A7A7A7;
+  --white: #ffffff;
+  --beige: #f5f5dc;
+  --dark-bg: #212121;
+  --light-bg: #f5f5dc;
+}
+
+body {
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-family: 'Figtree', 'Montserrat', 'Cascadia Mono', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: background 0.5s, color 0.5s;
+}
+
+body[data-theme="dark"] {
+  --brand-main: var(--brand_orange);
+  --bg-main: var(--dark-bg);
+  --text-main: var(--beige);
+  --text-secondary: var(--menu-gray);
+}
+
+body[data-theme="light"] {
+  --brand-main: var(--brand_blue);
+  --bg-main: var(--beige);
+  --text-main: var(--primary);
+  --text-secondary: var(--dark-bg);
+}

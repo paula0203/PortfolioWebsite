@@ -1,0 +1,212 @@
+
+
+.bulb-switcher-real {
+  position: fixed;
+  top: 0;
+  right: 60px;
+  z-index: 2000;
+  width: 120px;
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: auto;
+  user-select: none;
+}
+
+.cable {
+  width: 4px;
+  height: 160px;
+  background: #222;
+  border-radius: 2px;
+  margin-bottom: -10px;
+  transition: background 0.3s;
+}
+
+.cable:active,
+.cable.pulling {
+  animation: cable-pull 0.4s;
+}
+
+@keyframes cable-pull {
+  0% { transform: translateY(0); }
+  40% { transform: translateY(60px); }
+  60% { transform: translateY(60px); }
+  100% { transform: translateY(0); }
+}
+
+.bulb {
+  width: 44px;
+  height: 44px;
+  background: var(--white);
+  border-radius: 50%;
+  border: 4px solid #bbb;
+  position: relative;
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bulb-real {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  outline: none;
+  display: block;
+  transition: filter 0.3s;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 54px;
+  height: 90px;
+  transform: translate(-50%, 0);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: auto;
+  transition: box-shadow 0.2s;
+  will-change: transform;
+}
+
+.bulb-real:active {
+  cursor: grabbing;
+}
+
+.bulb-real.pulling {
+  animation: bulb-bounce 0.45s cubic-bezier(.68,-0.55,.27,1.55);
+}
+
+@keyframes bulb-bounce {
+  0%   { transform: translate(-50%, 60px); }
+  40%  { transform: translate(-50%, -20px); }
+  70%  { transform: translate(-50%, 10px); }
+  100% { transform: translate(-50%, 0); }
+}
+
+.bulb-glass {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(180deg, #fff 80%, #eee 100%);
+  border-radius: 50%;
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  z-index: 2;
+  opacity: 0.95;
+}
+
+.bulb-glass-real {
+  width: 54px;
+  height: 54px;
+  background: radial-gradient(ellipse at 60% 30%, #fff 80%, #eee 100%);
+  border-radius: 50% 50% 60% 60% / 55% 55% 100% 100%;
+  box-shadow: 0 0 32px 0 rgba(255,255,180,0.12);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  border-bottom: 3px solid #e0e0e0;
+}
+
+.bulb-filament {
+  width: 18px;
+  height: 8px;
+  border-bottom: 3px solid var(--brand-main);
+  border-radius: 0 0 12px 12px;
+  position: absolute;
+  left: 50%;
+  top: 22px;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+.bulb-filament-real {
+  position: absolute;
+  top: 28px;
+  left: 17px;
+  width: 20px;
+  height: 12px;
+  border-bottom: 3px solid #ffeb3b;
+  border-radius: 0 0 12px 12px;
+  z-index: 3;
+  opacity: 0.8;
+  transition: border-color 0.3s;
+}
+
+.bulb-real.on .bulb-filament-real {
+  border-bottom: 3px solid #ffe066;
+}
+
+.bulb-real.off .bulb-filament-real {
+  border-bottom: 3px solid #bbb;
+}
+
+.pull-text {
+  font-size: 0.85rem;
+  color: var(--brand-main);
+  margin-top: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  opacity: 0.7;
+  letter-spacing: 0.05em;
+}
+
+.bulb-base-real {
+  width: 22px;
+  height: 18px;
+  background: linear-gradient(180deg, #bbb 60%, #888 100%);
+  border-radius: 6px 6px 10px 10px;
+  position: absolute;
+  left: 16px;
+  top: 52px;
+  z-index: 4;
+  box-shadow: 0 2px 8px #8884;
+}
+
+.bulb-light-real {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.6;
+  transition: box-shadow 0.4s, background 0.4s;
+}
+
+.bulb-real.on .bulb-light-real {
+  box-shadow: 0 0 60px 20px #ffe066, 0 0 120px 40px #fffbe6;
+  background: radial-gradient(circle, #ffe066 40%, #fffbe6 100%);
+  opacity: 0.7;
+}
+
+.bulb-real.off .bulb-light-real {
+  box-shadow: 0 0 16px 2px #fff, 0 0 0 0 #fffbe6;
+  background: radial-gradient(circle, #fff 40%, #eee 100%);
+  opacity: 0.3;
+}
+
+.bulb-real.on {
+  filter: drop-shadow(0 0 32px #ffe06688);
+  animation: oscillaLampadina 1.2s ease-in-out infinite alternate;
+}
+.bulb-real.off {
+  filter: none;
+  animation: none;
+}
+
+.bulb-svg {
+  display: block;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+@keyframes oscillaLampadina {
+  from { transform: rotate(3deg) translate(-8px,-1px);}
+  to { transform: rotate(-3deg) translate(8px,-1px);}
+}

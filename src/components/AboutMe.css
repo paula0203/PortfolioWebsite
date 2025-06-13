@@ -1,0 +1,83 @@
+.aboutme-btn {
+  background: #e0e0e0;
+  color: #181818;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  cursor: pointer;
+  outline: none;
+  display: inline-block;
+}
+
+.aboutme-btn.linkedin-btn:hover {
+  background: #0a66c2;
+  color: #fff;
+}
+.aboutme-btn.github-btn:hover {
+  background: #24292f;
+  color: #fff;
+}
+.aboutme-btn.cv-btn:hover {
+  background: var(--beige);
+  color: #181818;
+}
+
+.social-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.social-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  background-color: rgba(255, 255, 255, 0.6);
+  color: #1c1e2a;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.social-button i {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+.social-button:hover {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.linkedin:hover {
+  background-color: #0077b5;
+}
+
+.github:hover {
+  background-color: #333;
+}
+
+.cv:hover {
+  background-color: var(--beige);
+  color: #1c1e2a;
+}
+
+.section-fade {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(.4,0,.2,1), transform 0.8s cubic-bezier(.4,0,.2,1);
+}
+.section-fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

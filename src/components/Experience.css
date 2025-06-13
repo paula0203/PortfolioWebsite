@@ -1,0 +1,78 @@
+.timeline-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 30px;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 40px;
+  border-left: 3px solid var(--brand-main);
+  min-height: 220px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 60px;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -13px;
+  top: 0;
+  width: 22px;
+  height: 22px;
+  background: var(--text-main);
+  border: 3px solid var(--brand-main);
+  border-radius: 50%;
+  z-index: 2;
+  transition: background 0.2s;
+}
+
+.timeline-dot.actual {
+  background: var(--brand-main);
+  border: 3px solid var(--text-main);
+}
+
+.timeline-content {
+  margin-left: 30px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 10px;
+  padding: 16px 24px;
+  color: var(--beige);
+  min-width: 220px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.timeline-date {
+  font-size: 0.95rem;
+  color: var(--brand-main);
+  font-family: 'Montserrat', 'Figtree', Arial, sans-serif;
+  font-weight: 600;
+}
+
+.timeline-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-top: 2px;
+  color: var(--text-main);
+  font-family: 'Montserrat', 'Figtree', Arial, sans-serif;
+}
+
+.timeline-desc {
+  font-size: 1rem;
+  color: var(--text-main);
+  margin-top: 4px;
+  font-family: 'Figtree', Arial, sans-serif;
+}
+
+.section-fade {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(.4,0,.2,1), transform 0.8s cubic-bezier(.4,0,.2,1);
+}
+.section-fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

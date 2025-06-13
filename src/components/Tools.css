@@ -1,0 +1,70 @@
+.tools-marquee {
+  overflow: hidden;
+  width: 100%;
+  margin-top: 10px; /* Reducido para acercar la barra a Proyectos */
+  background: transparent;
+  padding: 10px 0;
+}
+
+.tools-track {
+  display: flex;
+  width: fit-content;
+  animation: scrollTools 18s linear infinite;
+  gap: 2.5rem;
+}
+
+/* Pausa la animación al hacer hover sobre la cinta */
+.tools-marquee:hover .tools-track {
+  animation-play-state: paused;
+}
+
+.tool-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 100px;
+  margin: 0 10px;
+  transition: transform 0.25s;
+}
+
+/* Agranda el icono y el item al hacer hover */
+.tool-item:hover .tool-icon {
+  transform: scale(1.25);
+  filter: none;
+}
+.tool-item:hover {
+  z-index: 2;
+}
+
+.tool-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 10px;
+  filter: none;
+  transition: transform 0.25s, filter 0.25s;
+}
+
+.tool-label {
+  color: var(--text-main);
+  font-size: 16px;
+  margin-top: 2px;
+}
+
+@keyframes scrollTools {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.section-fade {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(.4,0,.2,1), transform 0.8s cubic-bezier(.4,0,.2,1);
+}
+.section-fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
