@@ -14,15 +14,18 @@ const Experience = () => {
     >
       <h2
         style={{
-          color: 'var(--brand-main)',
-          fontWeight: 700,
-          fontSize: 32,
-          marginBottom: 24,
-          marginLeft: 40,
-          textAlign: 'left'
-        }}
+					fontFamily: "'Poppins', monospace",
+					fontWeight: 800,
+					fontSize: '3.5rem',
+					color: 'var(--text-main)',
+					letterSpacing: '0.1em',
+					textTransform: 'uppercase',
+					textAlign: 'center',
+					margin: 0,
+					marginBottom: 40,
+				}}
       >
-        Experiencia
+        MY EXPERIENCE
       </h2>
       <div className="timeline-container">
         <div className="timeline">

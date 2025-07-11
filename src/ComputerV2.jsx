@@ -10,7 +10,7 @@ export function Model(props) {
   const { nodes, materials } = useGLTF('/ComputerV2.glb')
   return (
     <group {...props} dispose={null}>
-      <pointLight intensity={54351.413} decay={2} position={[4.076, 5.904, -1.005]} rotation={[-1.839, 0.602, 1.932]} />
+      <pointLight intensity={1.1} decay={2} position={[4.076, 5.904, -1.005]} rotation={[-1.839, 0.602, 1.932]} />
       <PerspectiveCamera makeDefault={true} far={100} near={0.1} fov={22.895} position={[7.359, 4.958, 6.926]} rotation={[-0.627, 0.71, 0.441]} />
       <mesh geometry={nodes.ScreenMonitor.geometry} material={materials.Material} position={[0.209, 2.37, 0.072]} scale={[1.343, 1, 0.599]} />
       <mesh geometry={nodes.Base.geometry} material={materials.Material} position={[0.213, 2.48, -0.764]} />

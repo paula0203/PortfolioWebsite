@@ -43,8 +43,38 @@ const AboutMe = () => {
           lineHeight: 1.5
         }}
       > 
-        Estudiante de Ingeniería en Organización de las TIC y explorando el mundo del desarrollo web.
+        ICT Engineering student at La Salle University, Barcelona. Currently exploring web design and development.
       </p>
+
+      <div className="social-buttons">
+        <a
+          href="https://www.linkedin.com/in/tuusuario"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="social-button linkedin"
+        >
+          <i className="fab fa-linkedin"></i>
+          LinkedIn
+        </a>
+        <a
+          href="https://github.com/tuusuario"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="social-button github"
+        >
+          <i className="fab fa-github"></i>
+          GitHub
+        </a>
+        <a
+          href="/CV.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="social-button cv"
+        >
+          <i className="fas fa-file-alt"></i>
+          CV
+        </a>
+      </div>
     </section>
   );
 };
